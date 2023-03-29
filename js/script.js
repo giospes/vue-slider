@@ -51,6 +51,11 @@ const app = Vue.createApp({
                 this.activeIndex--;  
             }        
         }
+    },
+    mounted(){
+        setInterval(() => this.goNext(), 3000)
+        
+        
     }
 
 })
