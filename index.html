@@ -14,16 +14,16 @@
 <body class="vh-100 d-flex justify-content-center align-items-center" >
     <div class="gs-container d-flex" id="app">
         <div class="gs-slide w-75">
-            <!-- <img src="./img/${img[currentImg]}" alt="" class=" w-100 h-100 object-fit-cover"> -->
+            <img :src="images[activeIndex].source" :alt="images[activeIndex].text" class=" w-100 h-100 object-fit-cover">
         </div>
         <div class="gs-carousel w-25 h-100 position-relative d-flex flex-column">
             <div v-for="image in images"  class="gs-carousel-item">
                 <img :src="image.source" :alt="image.text" class=" w-100 h-100 object-fit-cover gs-img-effect">
             </div>
-            <button class="previous position-absolute top-0 align-self-center border-0 bg-transparent text-primary fs-2 z-3">
+            <button @click="goBack()" class="previous position-absolute top-0 align-self-center border-0 bg-transparent text-primary fs-2 z-3">
                 <i class="fa-solid fa-chevron-up"></i>
             </button>
-            <button class="next position-absolute bottom-0 align-self-center border-0 bg-transparent text-primary fs-2 z-3">
+            <button @click="goNext()" class="next position-absolute bottom-0 align-self-center border-0 bg-transparent text-primary fs-2 z-3">
                 <i class="fa-solid fa-chevron-down"></i>
             </button>
         </div>
