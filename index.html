@@ -18,7 +18,7 @@
         </div>
         <div class="gs-carousel w-25 h-100 position-relative d-flex flex-column">
             <div v-for="(image, index) in images"  class="gs-carousel-item" >
-                <img :src="image.source" :alt="image.text" class=" w-100 h-100 object-fit-cover gs-img-effect" :class="{'active': activeIndex === index}">
+                <img @click="activeIndex = index" :src="image.source" :alt="image.text" class=" w-100 h-100 object-fit-cover gs-img-effect" :class="{'active': activeIndex === index}">
             </div>
             <button @click="goBack()" class="previous position-absolute top-0 align-self-center border-0 bg-transparent text-primary fs-2 z-3">
                 <i class="fa-solid fa-chevron-up"></i>
